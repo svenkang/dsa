@@ -1,4 +1,4 @@
-package util
+package ds
 
 type (
 	node struct {
@@ -24,7 +24,7 @@ func (this *List) Append(value interface{}) {
 	if this.head == nil {
 		this.head = node
 	} else {
-		current = this.head
+		current := this.head
 		for current.next != nil {
 			current = current.next
 		}

@@ -1,4 +1,4 @@
-package util
+package ds
 
 type (
 	node struct {
