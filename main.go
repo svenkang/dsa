@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/svenkang/dsa/ds"
+)
 
 func main() {
 	fmt.Println("Hello World")
