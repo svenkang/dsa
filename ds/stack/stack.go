@@ -1,43 +1,47 @@
 package ds
 
+import (
+	"errors"
+)
+
+var (
+	EmptyStackErr = errors.New("Cannot operate on an empty stack")
+)
+
 type (
-	node struct {
-		value interface{}
-		prev  *node
+	node[T any] struct {
+		value T
+		prev *node[T]
 	}
-	Stack struct {
-		top    *node
-		length int
+	Stack[T any] struct {
+		top *node[T]
+		size uint
 	}
 )
 
-// Len()
-func (this *Stack) Len() int {
-	return this.length
+func (s *Stack[T]) Push(v T) T {
+	s.top = &node[T]{ value: v, prev: s.top }
+	s.size++
+	return v
 }
 
-// Peek()
-func (this *Stack) Peek() interface{} {
-	if this.length == 0 {
-		return nil
+func (s *Stack[T]) Pop() (T, error) {
+	if s.size == 0 {
+		return *new(T), EmptyStackErr
 	}
-	return this.top.value
+	v := s.top.value 
+	s.top = s.top.prev
+	s.size--
+	return v, nil
 }
 
-// Push()
-func (this *Stack) Push(value interface{}) {
-	n := &node{value, this.top}
-	this.top = n
-	this.length++
-}
-
-// Pop()
-func (this *Stack) Pop() interface{} {
-	if this.length == 0 {
-		return nil
+func (s *Stack[T]) Peek() (T, error) {
+	if s.size == 0 {
+		return *new(T), EmptyStackErr
 	}
-	n := this.top
-	this.top = n.prev
-	this.length--
-	return n.value
+	return s.top.value, nil
+}
+
+func (s *Stack[T]) Len() uint {
+	return s.size
 }
