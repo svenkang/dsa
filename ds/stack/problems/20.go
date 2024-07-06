@@ -24,7 +24,7 @@ Constraints:
     s consists of parentheses only '()[]{}'.
 */
 
-func main() {
+func main2() {
 	if !isValid("()") {
 		fmt.Println("FAIL: case 1: should be valid")
 	} else {
