@@ -1,9 +1,9 @@
 # DSA
-  - [done] arrays
-  - [done] strings
-  - [done] linked list
-  - [done] stacks
-  - queues
+  -[done] arrays
+  -[done] strings
+  -[done] linked list
+  -[done] stacks
+  -[done] queues
   - hash
   - trees
   - graphs
