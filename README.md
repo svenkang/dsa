@@ -1,42 +1,25 @@
 # DSA
-  - [done] strings
   - [done] arrays
-    - static arrays
-    - dynamic arrays
-    - slices
-  - linked list
-    - singly
-    - doubly
-  - stacks
+  - [done] strings
+  - [done] linked list
+  - [done] stacks
   - queues
-    - priority queue
+  - hash
   - trees
-    - binary trees
   - graphs
-  - hashing
   - tries
   - heaps
 # Algorithms
-  - recursion
   - sorting
-    - insert sort
-    - merge sort
-    - quick sort
-    - bucket sort
-  - binary search
+  - recursion
+  - binar search
   - bfs
-  - df
+  - dfs
   - back tracking
   - heap
   - hash
   - adjacency list
-  - 1 dim DP
-  - 2 dim DP
+  - one dim dp
+  - two dim dp
   - bit operations
-
-# Leetcode
-
-# build your own
-  - http
-  - redis
 
