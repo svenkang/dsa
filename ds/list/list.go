@@ -1,41 +1,61 @@
 package ds
 
 type (
-	node struct {
-		value interface{}
-		next  *node
+	node[T comparable] struct {
+		value T
+		next *node[T]
 	}
 
-	List struct {
-		head   *node
-		length int
+	LinkedList[T comparable] struct {
+		head *node[T]
+		size uint
 	}
 )
 
-// Len()
-func (this List) Len() int {
-	return this.length
+func (l LinkedList[T]) Len() uint {
+	return l.size
 }
 
-// Append()
-func (this *List) Append(value interface{}) {
-	node := &node{value, nil}
+func (l *LinkedList[T]) Prepend(v T) T {
+	l.head = &node[T]{ value: v, next: l.head }
+	l.size++
+	return v
+}
 
-	if this.head == nil {
-		this.head = node
+func (l *LinkedList[T]) Append(v T) T {
+	n := &node[T]{value: v, next: nil }
+	if l.head == nil {
+		l.head = n
 	} else {
-		current := this.head
-		for current.next != nil {
-			current = current.next
+		ptr := l.head
+		for ptr.next != nil {
+			ptr = ptr.next
 		}
-		current.next = node
+		ptr.next = n
 	}
-	this.length++
+	l.size++
+	return v
 }
 
-// Prepend()
-func (this *List) Prepend(value interface{}) {
-	node := &node{value, this.head}
-	this.head = node
-	this.length++
+
+func (l *LinkedList[T]) Remove(v T) {
+	if l.head == nil {
+		return
+	}
+
+	if l.head.value == v {
+		l.head = l.head.next
+		l.size--
+		return
+	}
+
+	ptr := l.head
+	for ptr.next != nil && ptr.next.value != v {
+		ptr = ptr.next
+	}
+	if ptr.next != nil {
+		ptr.next = ptr.next.next
+		l.size--
+	}
+	return
 }

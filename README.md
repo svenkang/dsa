@@ -1,6 +1,6 @@
 # DSA
-  - strings
-  - arrays
+  - [done] strings
+  - [done] arrays
     - static arrays
     - dynamic arrays
     - slices
