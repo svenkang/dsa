@@ -4,7 +4,7 @@
   - [x] linked list
   - [x] stacks
   - [x] queues
-  - hash
+  - [x] hash
   - trees
   - graphs
   - tries
