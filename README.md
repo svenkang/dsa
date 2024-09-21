@@ -6,9 +6,9 @@
   - [x] queues
   - [x] hash
   - [x] trees
+  - [x] tries
   - heaps
   - graphs
-  - tries
 # Algorithms
   - sorting
   - recursion
