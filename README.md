@@ -5,14 +5,14 @@
   - [x] stacks
   - [x] queues
   - [x] hash
-  - trees
+  - [x] trees
+  - heaps
   - graphs
   - tries
-  - heaps
 # Algorithms
   - sorting
   - recursion
-  - binar search
+  - binary search
   - bfs
   - dfs
   - back tracking
@@ -22,4 +22,5 @@
   - one dim dp
   - two dim dp
   - bit operations
+  - graph theories
 
